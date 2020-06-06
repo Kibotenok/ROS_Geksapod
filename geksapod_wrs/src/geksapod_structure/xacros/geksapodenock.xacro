@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="geksapodenock">
+	
+	<!-- Include leg parts setup files -->
+	<xacro:include filename="thigh.xacro"/>	
+	<xacro:include filename="shin.xacro"/>
+	<xacro:include filename="leg.xacro"/>
+
+	<!-- Material color setup -->
+	<material name="red">
+		<color rgba="1 0 0 1" />	
+	</material>
+	
+	<!-- Body setup -->
+	<link name="body">
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://geksapod_strucutre/models/body.stl" />
+			</geometry>
+			<material name="red" />
+		</visual>	
+	</link>
+
+	<!-- Leg properties setup -->
+	<xacro:properties name="PI" value="3.1415926535897932384626433832795" />
+	<xacro:properties name="leg_lower_lim" value="" />
+	<xacro:properties name="leg_upper_lim" value="" />
+	<xacro:properties name="servo_effort" value="10000" />
+	<xacro:properties name="servo_vel" value="100" />
+	<xacro:properties name="thigh_file" value="package://geksapod_strucutre/models/thigh.stl" />
+	
+	
+	<!-- Thigh setup -->
+	<xacro:thigh file="${thigh_file}" name="rf" parent="body" lower_lim="${leg_lower_lim}" 			upper_lim="${leg_upper_lim}" effort="${servo_effort}" vel="${servo_vel}" xyz="0 0 0" 			rpy="0 0 0" />
+	<xacro:thigh file="${thigh_file}" name="lf" parent="body" lower_lim="${leg_lower_lim}" 			upper_lim="${leg_upper_lim}" effort="${servo_effort}" vel="${servo_vel}" xyz="0 0 0" 			rpy="0 0 0" />
+	<xacro:thigh file="${thigh_file}" name="rm" parent="body" lower_lim="${leg_lower_lim}" 			upper_lim="${leg_upper_lim}" effort="${servo_effort}" vel="${servo_vel}" xyz="0 0 0" 			rpy="0 0 0" />
+	<xacro:thigh file="${thigh_file}" name="lm" parent="body" lower_lim="${leg_lower_lim}" 			upper_lim="${leg_upper_lim}" effort="${servo_effort}" vel="${servo_vel}" xyz="0 0 0" 			rpy="0 0 0" />
+	<xacro:thigh file="${thigh_file}" name="rb" parent="body" lower_lim="${leg_lower_lim}" 			upper_lim="${leg_upper_lim}" effort="${servo_effort}" vel="${servo_vel}" xyz="0 0 0" 			rpy="0 0 0" />
+	<xacro:thigh file="${thigh_file}" name="lb" parent="body" lower_lim="${leg_lower_lim}" 			upper_lim="${leg_upper_lim}" effort="${servo_effort}" vel="${servo_vel}" xyz="0 0 0" 			rpy="0 0 0" />
+	 
+</robot>
+
+

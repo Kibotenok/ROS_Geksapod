@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Setup enviroment for the ROS and run roscore
+
+cd ./geksapod_wrs
+source devel/setup.bash
+roscd geksapod/
+chmod u+x src/geksapod_node/Geksapod.py
+roslaunch geksapod geksapod.launch
+

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<xacro:macro name="thigh" params="file name parent lower_lim upper_lim effort vel xyz rpy" />
+	
+	<!-- Material color setup -->
+	<material name="blue" >
+		<color rgba="0 0.75 1 1" />
+	</material>
+
+	<!-- Thigh setup -->
+	<link name="thigh_${name}" >
+		<visual>
+			<origin xyz="${xyz}" rpy="${xyz}" />
+			<geometry>
+				<mesh filename="${file}" />
+			</geometry>
+			<material name="blue" />
+		</visual>
+	</link>
+
+	<joint name="shoulder_${name}" type="revolute" >
+		<parent link="${parent}" />
+		<child link="thigh_${name}" />
+		<limit effort="${effort}" velocity="${vel}" lower="${lower_lim}" upper="${upper_lim}" />	
+	</joint>
+</xacro:macro>

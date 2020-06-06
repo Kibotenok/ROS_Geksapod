@@ -1,0 +1,2 @@
+
+-DCATKIN_DEVEL_PREFIX=/home/aantropov/WORK/ROBBO/GeksapodSoft/ROS_Geksapod/geksapod_wrs/devel -DCMAKE_INSTALL_PREFIX=/home/aantropov/WORK/ROBBO/GeksapodSoft/ROS_Geksapod/geksapod_wrs/install -G Unix Makefiles
